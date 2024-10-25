@@ -1,0 +1,19 @@
+version: '3'
+services:
+  jenkins:
+    build: '.'
+    labels:
+      kompose.service.type: nodeport
+    ports:
+      - '4081:8080'
+      - '4444:8443'
+      - '50001:50000'
+    volumes:
+      - '/data/ferrotech_jenkins/jenkins_workspace:/var/jenkins_home'
+      - '/data/ferrotech_jenkins/sshd_config:/etc/ssh/sshd_config'
+    restart: always
+    privileged: true
+
+volumes:
+  jenkins_data:
+    driver: local

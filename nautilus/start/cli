@@ -1,0 +1,3 @@
+#!/usr/bin/sh
+
+../software/build/x86/bin/kf-client -port 45500 -device M8 -xml-file kf_config.xml -com-mode --udp 

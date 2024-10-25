@@ -1,0 +1,33 @@
+-device MOTOR10A_1
+sleep 500
+-config
+sleep 10000
+-device MOTOR10A_2
+sleep 500
+-config
+sleep 10000
+-device MOTOR10A_1
+sleep 500
+-stepper-start-continious-move -1
+sleep 10000
+-device MOTOR10A_2
+sleep 500
+-stepper-start-continious-move -1
+sleep 10000
+-device MOTOR10A_1
+sleep 500
+-stop-soft
+sleep 10000
+-stepper-start-continious-move 1
+sleep 10000
+-device MOTOR10A_2
+sleep 500
+-stop-soft
+sleep 10000
+-go-home
+sleep 10000
+-device MOTOR10A_1
+sleep 500
+-go-home
+
+

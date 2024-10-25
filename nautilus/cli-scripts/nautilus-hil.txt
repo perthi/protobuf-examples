@@ -1,0 +1,60 @@
+-device M7
+-config
+sleep 1
+-device M8
+-config
+sleep 1
+-device M15
+-config
+sleep 1
+-device M17
+-config
+sleep 1
+-device M18
+-config
+sleep 1
+-device S3
+-config
+sleep 1
+-device S5
+-config
+sleep 1
+-device S10
+-config
+sleep 1
+-device S8
+-config
+sleep 1
+-device S9
+-config
+sleep 1
+-device L1-U1-S1
+-config
+sleep 1
+-device L1-U1-S2
+-config
+sleep 1
+-device L1-U1-S3
+-config
+sleep 1
+-device L1-U1-S4
+-config
+sleep 1
+-device L1-U1-S5
+-config
+sleep 1
+-device L1-U1-S6
+-config
+sleep 1
+-device L1
+-config
+sleep 1
+-device L2
+-config
+sleep 1
+-device M1
+-config
+sleep 1
+-device M4
+-config
+sleep 1

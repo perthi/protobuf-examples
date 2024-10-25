@@ -1,0 +1,20 @@
+-device M7
+-config
+-device M8
+-config
+-device M5
+-config
+-device M6
+-config
+-device M11
+-config
+-device M13
+-config
+-device M14
+-config
+-device M9
+-config
+-device M18
+-config
+-device M15
+-config

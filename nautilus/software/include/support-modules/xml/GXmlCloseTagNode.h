@@ -1,0 +1,1 @@
+../../../support-modules/xml/GXmlCloseTagNode.h

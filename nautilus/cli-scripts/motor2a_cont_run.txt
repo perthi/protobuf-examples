@@ -1,0 +1,32 @@
+-device MOTOR2A_6
+sleep 1000
+-config
+sleep 1000
+-stepper-set-speed 1000
+sleep 1000
+-stepper-start-continious-move 1
+sleep 280000
+-stepper-start-continious-move 1
+sleep 280000
+-stepper-start-continious-move 1
+sleep 280000
+-stepper-start-continious-move -1
+sleep 280000
+-stepper-start-continious-move -1
+sleep 280000
+-stepper-start-continious-move -1
+sleep 280000
+-stepper-start-continious-move -1
+sleep 280000
+-stepper-start-continious-move -1
+sleep 280000
+-stepper-start-continious-move -1
+sleep 280000
+-stepper-start-continious-move 1
+sleep 280000
+-stepper-start-continious-move 1
+sleep 280000
+-stepper-start-continious-move 1
+sleep 280000
+
+

@@ -1,0 +1,22 @@
+-device L1-U1-S1
+sleep 1000
+-config
+sleep 1000
+-device L1-U1-S2
+sleep 1000
+-config
+sleep 1000
+-device L1-U1-S3
+sleep 1000
+-config
+sleep 1000
+-device L1-U1-S4
+sleep 1000
+-config
+sleep 1000
+-device S5
+sleep 1000
+-config
+sleep 1000
+
+

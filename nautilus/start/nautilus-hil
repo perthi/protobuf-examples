@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo "-script nautilus-hil.txt\n-q" | ../software/build/x86/bin/kf-client -port 45500 -device M8 -xml-file kf_config_HIL.xml -com-mode --udp
+#../software/build/x86/bin/c-ring-example1 -xml-devices kf_config_HIL.xml -xml-hmi kf_hmi_HIL.xml
+# ../software/build/x86/bin/gui-operations-example1 -xml-devices kf_config_HIL.xml -xml-hmi kf_hmi_HIL.xml
+../software/build/x86/bin/gui-main -xml-devices kf_config_HIL.xml -xml-hmi kf_hmi_HIL.xml

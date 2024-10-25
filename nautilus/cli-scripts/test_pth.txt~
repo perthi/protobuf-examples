@@ -1,0 +1,6 @@
+
+-xy-set-position   44 55.77
+sleep 1000
+-solenoid-activate
+sleep 1000
+pwm-set 123

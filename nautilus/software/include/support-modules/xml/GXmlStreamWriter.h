@@ -1,0 +1,1 @@
+../../../support-modules/xml/GXmlStreamWriter.h

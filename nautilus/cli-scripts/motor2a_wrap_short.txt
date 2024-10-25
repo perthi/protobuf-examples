@@ -1,0 +1,40 @@
+-device MOTOR2A_6
+sleep 1000
+-config
+sleep 1000
+-stepper-set-speed 1000
+sleep 1000
+-stepper-increment-position 262143
+sleep 290000
+-stepper-increment-position 262143
+sleep 290000
+-stepper-increment-position 262143
+sleep 290000
+-stepper-increment-position 1000
+sleep 10000
+-stepper-increment-position -1000
+sleep 10000
+-stepper-increment-position -262143
+sleep 290000
+-stepper-increment-position -262143
+sleep 290000
+-stepper-increment-position -262143
+sleep 290000
+-stepper-increment-position -262143
+sleep 290000
+-stepper-increment-position -262143
+sleep 290000
+-stepper-increment-position -262143
+sleep 290000
+-stepper-increment-position -1000
+sleep 10000
+-stepper-increment-position 1000
+sleep 10000
+-stepper-increment-position 262143
+sleep 290000
+-stepper-increment-position 262143
+sleep 290000
+-stepper-increment-position 262143
+sleep 290000
+
+

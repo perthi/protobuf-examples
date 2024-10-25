@@ -1,0 +1,7 @@
+#!/bin/sh
+
+echo "-script nautilus-start.txt\n-q" | ../software/build/x86/bin/kf-client -port 45500 -device M8 -xml-file kf_config.xml -com-mode --udp
+# ../software/build/x86/bin/c-ring-example1 -xml-devices kf_config.xml -xml-hmi kf_hmi.xml &
+# ../software/build/x86/bin/gui-operations-example1 -xml-devices kf_config.xml -xml-hmi kf_hmi.xml &
+../software/build/x86/bin/gui-main &
+

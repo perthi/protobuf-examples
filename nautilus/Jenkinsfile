@@ -1,0 +1,97 @@
+pipeline
+{
+    agent none
+    triggers
+    {
+        pollSCM('H/10 * * * *')
+    }
+
+    environment
+    {
+        SOFTWARE_SRC='software'
+        SOFTWARE_BIN='software/build/x86/bin'
+        SOFTWARE_LIB='software/build/x86/lib'
+
+        FIRMWARE_SRC='firmware/controller_node/main/source'
+        FIRMWARE_BIN='firmware/controller_node/main/source/build'
+
+    }
+    stages
+    {
+        stage('Build')
+        {
+            parallel
+            {
+                stage('IAR Build')
+                {
+                    agent
+                    {
+                        node
+                        {
+                            label 'iar-8.1'
+                        }
+                    }
+                    steps
+                    {
+                        dir("${env.FIRMWARE_SRC}")
+                        {
+                            bat script: "\"${env.IAR_8_1_PATH}/IarBuild.exe\" FerrotechControllerNode.ewp -make \"STM32F767ZI PowerIoBoard-01\" -log warnings"
+                        }
+                         archiveArtifacts (
+                                artifacts: "${env.FIRMWARE_BIN}/**/Exe/*.bin",
+                                fingerprint: true,
+                                caseSensitive: false )
+                    }
+                    post
+                    {
+                        always
+                        {
+                            recordIssues(
+                                enabledForFailure: false,
+                                tool: iar())
+                        }
+                    }
+                }
+                stage('Linux Build')
+                {
+                    agent
+                    {
+                        dockerfile
+                        {
+                            dir "software/scripts/docker"
+                            filename "Dockerfile"
+                            label 'linux && docker'
+                        }
+                    }
+                    steps
+                    {
+                        dir("${env.SOFTWARE_SRC}")
+                        {
+                            sh 'gcc -v'
+                            sh 'make -j8 --makefile Makefile TARGET=x86'
+                        }
+                    }
+                }
+            }
+        } /*
+        stage("Unit-tests")
+        {
+            agent
+            {
+                dockerfile
+                {
+                    dir "software/scripts/docker"
+                    filename "Dockerfile"
+                    label 'linux && docker'
+                }
+            }
+            steps
+            {
+                dir("${env.SOFTWARE_SRC}")
+                {
+                    sh './run-unittests.sh x86'
+                }
+            }
+        } */
+    }
+}

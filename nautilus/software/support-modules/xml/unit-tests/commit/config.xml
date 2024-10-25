@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<database mode="Testsystem">
+	<connection type="testrun">
+		<engine>PSQL</engine>
+		<server>localhost</server>
+		<database>knstslab</database>
+		<user>dblab</user>
+		<password encryption="AES-128" encoding="base64">******Kryptert******</password>
+	</connection>
+</database>

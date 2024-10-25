@@ -1,0 +1,1 @@
+../../configuration/KFEntityDeviceSensorBoolDirect.h

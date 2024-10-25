@@ -1,0 +1,277 @@
+
+syntax = "proto2";
+
+
+
+message SEMValue
+{
+     required float f_val = 1;
+}
+
+message SEMXYValue
+{
+     required float x = 1;
+     required float y = 2;
+}
+
+message SEMCrc
+{
+   required int32 crc = 1;
+
+}
+/************ DONE *****************/
+
+
+
+/**********  SEM COMMAND DEEFINITIONS *********/
+message SEMCommand
+{
+    required string  device_id = 1;
+    required int32   cmd_id = 2;
+
+    oneof payload
+    {
+        SEMValue    val = 4;
+        SEMXYValue  xy = 5;
+    }
+}
+/************ DONE *****************/
+
+/**********  SEM Status MESSAGE DEFINITIONS *********/
+message SEMMessageStatus
+{
+   required int32   state = 1;              // 1-NOT_CONFIGURED, 2-RUNNING, 3-ERROR, 4-READY
+   optional int32   configuration_crc = 2;
+   optional int32   error_code = 3;         // 0x00 - No Error, 0x01-Error
+   optional string  error_string = 4;
+}
+
+/**********  SEM SENSOR MESSAGE DEFINITIONS *********/
+message SEMMessageSensor
+{
+   required int32   state = 1;              // 1-NOT_CONFIGURED, 2-RUNNING, 3-ERROR
+   required float   value_converted = 2;
+   optional int32   value_raw = 3;
+   required int32   alarm_status = 4;       // 1-Unconfigured, 2-No Alarms, 3-High Alarm, 4-High Warning, 5-Low Warning, 6-Low Alarm
+   optional int32   error_code = 5;         // 0x01 - Communication Error, 0x02 - Sensor Not Connected
+   optional string  error_string = 6;
+}
+
+/**********  SEM BOOL SENSOR MESSAGE DEFINITIONS *********/
+message SEMMessageSensorBool
+{
+   required int32   state = 1;              // 1-NOT_CONFIGURED, 2-RUNNING, 3-ERROR
+   required int32   value_converted = 2;
+   optional int32   value_raw = 3;
+   optional int32   error_code = 5;         // 0x01 - Communication Error, 0x02 - Sensor Not Connected
+   optional string  error_string = 6;
+}
+
+/**********  SEM MOTOR MESSAGE DEFINITIONS *********/
+message SEMMessageMotor
+{
+   required int32   state = 1;              // 1-NOT_CONFIGURED, 2-RUNNING, 3-ERROR, 4-READY, 5-FINISHED, 6-ABORTING, 7-ABORTED, 8-STOPPING, 9-STOPPED
+   required float   value_position = 2;
+   optional float   value_speed = 3;
+   optional bool    end_stop_reached = 4;
+   optional bool    home_position_reached = 5;
+   optional int32   error_code = 6;         // 0x00 - No Error, 0x01-Execution Error, 0x02-Over Temperature, 0x04-Over Current, 0x08-Short Circuit, 0x10-Invalid Command, 0x80-Unspecified Error
+   optional string  error_string = 7;
+}
+
+/**********  SEM SOLENOID MESSAGE DEFINITIONS *********/
+message SEMMessageSolenoid
+{
+   required int32   state = 1;              // 1-NOT_CONFIGURED, 2-ERROR, 3-ACTIVATED, 4-DEACTIVATED
+   optional int32   error_code = 2;         // 0x00 - No Error, 0x01-Execution Error, 0x02-Over Temperature, 0x04-Over Current, 0x08-Short Circuit, 0x10-Invalid Command, 0x80-Unspecified Error
+   optional string  error_string = 3;
+}
+
+/**********  SEM MOTOR MESSAGE DEFINITIONS *********/
+message SEMMessageXYMotor
+{
+   required int32   state = 1;              // 1-NOT_CONFIGURED, 2-RUNNING, 3-ERROR, 4-READY, 5-FINISHED, 6-ABORTING, 7-ABORTED, 8-STOPPING, 9-STOPPED
+   required float   value_x_position = 2;
+   required float   value_y_position = 3;
+   optional int32   error_code = 4;         // 0x00 - No Error, 0x01-Execution Error, 0x20 - Follow-Error, 0x10-Invalid Command, 0x80-Unspecified Error
+   optional string  error_string = 5;
+}
+
+
+/**********  SEM CONGIGURATION REPLY  MESSAGE DEFINITIONS *********/
+message SEMMessageConfigurationStatusReply
+{
+   optional int32   error_code = 2;         // 0x00 - No Error, 0x01-Error
+   optional string  error_string = 3;
+}
+
+
+/**********  SEM COMMAND REPLY  MESSAGE DEFINITIONS *********/
+message SEMMessageCommandStatusReply
+{
+   optional int32   error_code = 5;         // 0x00 - No Error, 0x01-Error
+   optional string  error_string = 6;
+}
+
+
+
+/**********  SEM MESSAGE DEFINITIONS *********/
+message SEMMessage 
+{
+    required string  device_id = 1;
+
+    oneof payload
+    {
+        SEMMessageStatus                sem_status = 3;
+        SEMMessageSensor                sensor_status = 4;
+        SEMMessageSensorBool            bool_sensor_status =5;
+        SEMMessageMotor                 motor_status = 6;
+        SEMMessageSolenoid              solenoid_status = 7;
+        SEMMessageXYMotor               xy_motor_status = 8;
+        SEMMessageConfigurationStatusReply    configuration_reply = 9;
+        SEMMessageCommandStatusReply           command_reply = 10;
+    }
+}
+
+
+
+
+
+
+
+/**********  SEM CONFIG DEFINITIONS *********/
+message SEMConfig
+{
+   required SEMDeviceAddress address = 1;
+
+   oneof device
+   {
+        SEMConfigSEM sem = 2;
+        SEMConfigStepperMotor  motor_stepper= 3;
+        SEMConfigVirtualXYMotors motor_xy = 4;
+        SEMConfigSolenoid solenoid = 5;
+        SEMConfigPWM pwm = 6;
+        SEMConfigSensorAnalog sensor_analog = 7;
+        SEMConfigSensorBool sensor_bool = 8;
+   }
+}
+
+message SEMDeviceAddress
+{
+    required string  device_id = 1;
+    optional string  device_name = 2;
+    required int32   card_id = 3;
+    required int32   device_port_no = 4;
+    optional int32   device_type = 5;
+}
+
+message SEMStepUnitConversion
+{
+    required int32 si_unit = 1;
+    required float unit_per_step = 2;
+}
+
+message  SEMLinearUnitConversion
+{
+   required int32  input_type  = 1;
+   required float  min_input   = 2;
+   required float  max_input   = 3;
+   required float  min_output  = 4;
+   required float  max_output  = 5;
+}
+
+message SEMThresholds
+{
+    optional float alarm_low = 1;
+    optional float warning_low = 2;
+    optional float warning_high = 3;
+    optional float alarm_high = 4;
+}
+
+message SEMConfigSEM
+{
+    required string name = 1;
+    optional int32  enable_wifi = 2;
+    repeated int32  ethernet_address = 3;
+    repeated int32  ethernet_mask = 4;
+    repeated int32  ethernet_default_gateway = 5;
+    repeated int32  dnsServerAddress = 6;
+}
+
+message SEMConfigStepperMotor
+{
+   required   SEMStepUnitConversion conversion = 1;
+   required   int32   direction_positive = 2;
+   optional   float   negative_soft_endstop = 3;
+   optional   float   positive_soft_endstop = 4;
+   optional   float   max_speed = 5;
+   optional   float   speed = 6;
+   optional   float   max_acceleration = 7;
+   optional   float   acceleration = 8;
+   optional   float   max_current = 9;
+   optional   float   current = 10;
+   optional   float   inactive_timeout = 11;
+   optional   float   inactive_current = 12;
+   optional   float   home_value = 13;
+   optional   string  home_device_id = 14;
+   optional   int32   direction_home = 15;
+   optional   string  negative_soft_endstop_id = 16;
+   optional   string  positive_soft_endstop_id = 17;
+}
+
+message SEMConfigVirtualXYMotors
+{
+   required string device_id_x =1;
+   required string device_id_y =2;
+}
+
+
+message SEMConfigSolenoid
+{
+   optional float  max_current = 1;
+   optional float  activate_current = 2;
+   optional float  hold_current = 3;
+}
+
+message SEMConfigPWM
+{
+   required SEMLinearUnitConversion conversion = 1;
+   optional float min_level = 3;
+   optional float max_level = 4;
+}
+
+message SEMConfigSensorAnalog
+{
+   optional SEMLinearUnitConversion conversion = 1;
+   optional SEMThresholds           thresholds = 2;
+   optional int32                   input_type = 3;
+   optional string                  device_id_aux = 4;
+}
+
+message SEMConfigSensorBool
+{
+   optional int32    signal_type = 1;
+   optional bool     active_high = 2;
+   optional bool     alarm = 3;
+   optional string   device_id_aux = 4;
+}
+
+
+
+
+
+message SEMOneOfMessage  /// FROM PC to SEM
+{
+    required int32   sequence_id = 1;
+
+    oneof payload
+    {
+        SEMConfig  sem_config = 2;
+        SEMCommand sem_command = 3;
+        SEMMessage sem_message  = 4;
+    }
+}
+
+
+/************ DONE *****************/
+

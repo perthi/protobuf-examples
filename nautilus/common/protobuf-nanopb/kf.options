@@ -1,0 +1,26 @@
+
+SEMCommand.device_id max_size:32
+SEMMessageStatus.error_string max_size:32
+SEMMessageSensor.error_string max_size:32
+SEMMessageSensorBool.error_string max_size:32
+SEMMessageMotor.error_string max_size:32
+SEMMessageSolenoid.error_string max_size:32
+SEMMessageXYMotor.error_string max_size:32
+SEMMessage.device_id max_size:32
+SEMDeviceAddress.device_id max_size:32
+SEMDeviceAddress.device_name max_size:32
+SEMConfigStepperMotor.negative_soft_endstop_id max_size:32;
+SEMConfigStepperMotor.positive_soft_endstop_id max_size:32;
+SEMConfigStepperMotor.home_device_id max_size:32;
+SEMConfigVirtualXYMotors.device_id_x max_size:32;
+SEMConfigVirtualXYMotors.device_id_y max_size:32;
+SEMConfigSensorAnalog.device_id_aux  max_size:32;
+SEMConfigSensorBool.device_id_aux  max_size:32;
+SEMMessageCommandStatusReply.error_string max_size:32;
+SEMMessageConfigurationStatusReply.error_string max_size:32;
+
+
+
+// SEMMessage.param_f max_count:
+// SEMAck.msg max_size:1024
+// SEMSensorValue.msg max_size:1024

@@ -1,0 +1,34 @@
+-device MOTOR10A_1
+sleep 1000
+-config
+sleep 1000
+-stepper-set-speed 1000
+sleep 1000
+-set-acceleration 100
+sleep 1000
+-stepper-increment-position 131070
+sleep 145000
+-stepper-increment-position 131070
+sleep 145000
+-stepper-increment-position 131070
+sleep 145000
+-stepper-increment-position -131070
+sleep 145000
+-stepper-increment-position -131070
+sleep 145000
+-stepper-increment-position -131070
+sleep 145000
+-stepper-increment-position -131070
+sleep 145000
+-stepper-increment-position -131070
+sleep 145000
+-stepper-increment-position -131070
+sleep 145000
+-stepper-increment-position 131070
+sleep 145000
+-stepper-increment-position 131070
+sleep 145000
+-stepper-increment-position 131070
+sleep 145000
+
+

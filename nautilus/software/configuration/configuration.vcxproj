@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="KFCard.cpp" />
+    <ClCompile Include="KFConfig.cpp" />
+    <ClCompile Include="KFConfigCamera.cpp" />
+    <ClCompile Include="KFConfigurationHandlerCamera.cpp" />
+    <ClCompile Include="KFConfigMotor.cpp" />
+    <ClCompile Include="KFConfigurationHandler.cpp" />
+    <ClCompile Include="KFConfigUtilities.cpp" />
+    <ClCompile Include="KFDeviceAddress.cpp" />
+    <ClCompile Include="KFEntity.cpp" />
+    <ClCompile Include="KFEntityCamera.cpp" />
+    <ClCompile Include="KFEntityDevice.cpp" />
+    <ClCompile Include="KFEntityDeviceMotorStepper.cpp" />
+    <ClCompile Include="KFEntityDeviceMotorXY.cpp" />
+    <ClCompile Include="KFEntityDevicePWM.cpp" />
+    <ClCompile Include="KFEntityDevicePWMPower.cpp" />
+    <ClCompile Include="KFEntityDevicePWMSignal.cpp" />
+    <ClCompile Include="KFEntityDeviceSensor.cpp" />
+    <ClCompile Include="KFEntityDeviceSensorAnalogDirect.cpp" />
+    <ClCompile Include="KFEntityDeviceSensorBoolDirect.cpp" />
+    <ClCompile Include="KFEntityDeviceSensorLocal.cpp" />
+    <ClCompile Include="KFEntityDeviceSolenoid.cpp" />
+    <ClCompile Include="KFEntityHMI.cpp" />
+    <ClCompile Include="KFEntityHMICRing.cpp" />
+    <ClCompile Include="KFEntityHMIOperation.cpp" />
+    <ClCompile Include="KFFactorySensor.cpp" />
+    <ClCompile Include="KFHMICaption.cpp" />
+    <ClCompile Include="KFHMIControl.cpp" />
+    <ClCompile Include="KFHMIControlGroup.cpp" />
+    <ClCompile Include="KFHMIIndicator.cpp" />
+    <ClCompile Include="KFHMIStepNavigator.cpp" />
+    <ClCompile Include="KFInfoCamera.cpp" />
+    <ClCompile Include="KFPositionCamera.cpp" />
+    <ClCompile Include="KFSensor.cpp" />
+    <ClCompile Include="KFSensorThresholds.cpp" />
+    <ClCompile Include="KFSensorUnitConversion.cpp" />
+    <ClCompile Include="KFXMLParser.cpp" />
+    <ClCompile Include="KFXMLParserCamera.cpp" />
+    <ClCompile Include="KFXMLParserDevices.cpp" />
+    <ClCompile Include="KFXMLParserHMI.cpp" />
+    <ClCompile Include="KFXMLWriter.cpp" />
+    <ClCompile Include="KFXMLWriterCamera.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="KFCard.h" />
+    <ClInclude Include="KFConfig.h" />
+    <ClInclude Include="KFConfigCamera.h" />
+    <ClInclude Include="KFConfigurationHandlerCamera.h" />
+    <ClInclude Include="KFConfigMotor.h" />
+    <ClInclude Include="KFConfigurationHandler.h" />
+    <ClInclude Include="KFConfigUtilities.h" />
+    <ClInclude Include="KFDeviceAddress.h" />
+    <ClInclude Include="KFEntity.h" />
+    <ClInclude Include="KFEntityCamera.h" />
+    <ClInclude Include="KFEntityDevice.h" />
+    <ClInclude Include="KFEntityDeviceMotorStepper.h" />
+    <ClInclude Include="KFEntityDeviceMotorXY.h" />
+    <ClInclude Include="KFEntityDevicePWM.h" />
+    <ClInclude Include="KFEntityDevicePWMPower.h" />
+    <ClInclude Include="KFEntityDevicePWMSignal.h" />
+    <ClInclude Include="KFEntityDeviceSensor.h" />
+    <ClInclude Include="KFEntityDeviceSensorAnalogDirect.h" />
+    <ClInclude Include="KFEntityDeviceSensorBoolDirect.h" />
+    <ClInclude Include="KFEntityDeviceSensorLocal.h" />
+    <ClInclude Include="KFEntityDeviceSolenoid.h" />
+    <ClInclude Include="KFEntityHMI.h" />
+    <ClInclude Include="KFEntityHMICRing.h" />
+    <ClInclude Include="KFEntityHMIOperation.h" />
+    <ClInclude Include="KFEnums.h" />
+    <ClInclude Include="KFFactorySensor.h" />
+    <ClInclude Include="KFHMICaption.h" />
+    <ClInclude Include="KFHMIControl.h" />
+    <ClInclude Include="KFHMIControlGroup.h" />
+    <ClInclude Include="KFHMIIndicator.h" />
+    <ClInclude Include="KFHMIStepNavigator.h" />
+    <ClInclude Include="KFInfoCamera.h" />
+    <ClInclude Include="KFPositionCamera.h" />
+    <ClInclude Include="KFSensor.h" />
+    <ClInclude Include="KFSensorThresholds.h" />
+    <ClInclude Include="KFSensorUnitConversion.h" />
+    <ClInclude Include="KFXMLParser.h" />
+    <ClInclude Include="KFXMLParserCamera.h" />
+    <ClInclude Include="KFXMLParserDevices.h" />
+    <ClInclude Include="KFXMLParserHMI.h" />
+    <ClInclude Include="KFXMLWriter.h" />
+    <ClInclude Include="KFXMLWriterCamera.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{78FCF8E4-4F71-46AC-9888-0A58D97E40A4}</ProjectGuid>
+    <RootNamespace>configuration</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\shared-properties\common.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\shared-properties\common.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\shared-properties\common.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\shared-properties\common.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(kf-include);$(boost-include)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(kf-bindir);$(boost-libdir)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>logging-dll.lib;cmdline-dll.lib;xml-dll.lib;common-dll.lib;utilities-dll.lib</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command />
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(kf-include);$(boost-include)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>$(kf-bindir);$(boost-libdir)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>logging-dll.lib;cmdline-dll.lib;xml-dll.lib;common-dll.lib;utilities-dll.lib</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command />
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(kf-include);$(boost-include)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>$(kf-bindir);$(boost-libdir)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>logging-dll.lib;cmdline-dll.lib;xml-dll.lib;common-dll.lib;utilities-dll.lib</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command />
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(kf-include);$(boost-include)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(kf-bindir);$(boost-libdir)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>logging-dll.lib;cmdline-dll.lib;xml-dll.lib;common-dll.lib;utilities-dll.lib</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command />
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE code [
+  <!ELEMENT code (#PCDATA)>
+  <!NOTATION vrml PUBLIC "VRML 1.0">
+  <!ATTLIST code lang NOTATION (vrml) #REQUIRED>
+  <!ENTITY dotto "Dottoro"> 
+]>
+<root>
+	<norwegian>Æ ælsk å røre i grøten</norwegian>
+	<a attr0="0" attr1="one" attr2="2">
+		<p>
+		paragraph text
+		</p>
+		<singletag/>
+	</a>
+	<b>Numbers 113114115116</b>
+	<nodata></nodata>
+	<empty/>
+	<emptywithattributes a="!" b="1234"/>
+	<![CDATA[<norwegian>Æ ælsk å røre i grøten</norwegian>
+<a attr0="0" attr1="one" attr2="2">
+	<p>paragraph text</p>
+	<singletag/>
+</a>
+<b>Numbers 113114115116</b>
+<nodata></nodata>
+<empty/>
+<emptywithattributes a="!" b="1234"/>
+]]>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+ <xs:notation name="gif" public="image/gif" system="view.exe"/>
+ <xs:notation name="jpeg" public="image/jpeg" system="view.exe"/>
+
+ <xs:element name="image">
+   <xs:complexType>
+     <xs:simpleContent>
+       <xs:attribute name="type">
+         <xs:simpleType>
+           <xs:restriction base="xs:NOTATION">
+             <xs:enumeration value="gif"/>
+             <xs:enumeration value="jpeg"/>
+           </xs:restriction>
+         </xs:simpleType>
+       </xs:attribute>
+     </xs:simpleContent>
+   </xs:complexType>
+ </xs:element>
+
+ </xs:schema>
+
+ The "image" element in a document could look like this:
+
+ <image type="gif"></image>
+ <code lang="vrml">Some VRML instructions</code>
+</root>

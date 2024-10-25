@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{C2938D4A-D0AE-47B1-9881-2331D4E3F453}</ProjectGuid>
+    <RootNamespace>protocol</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\shared-properties\common.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\shared-properties\common.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\shared-properties\common.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\shared-properties\common.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(kf-include);$(boost-include)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>$(kf-core-libs);com.lib</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command />
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(kf-include);$(boost-include)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>$(kf-core-libs);com.lib</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command />
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(kf-include);$(boost-include)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>$(kf-core-libs);com.lib</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command />
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(kf-include);$(boost-include)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>$(kf-core-libs);com.lib</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command />
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="kf.pb.cpp" />
+    <ClCompile Include="KFClientMain.cpp" />
+    <ClCompile Include="KFClientTCP.cpp" />
+    <ClCompile Include="KFClientUDP.cpp" />
+    <ClCompile Include="KFMessageHandler.cpp" />
+    <ClCompile Include="KFPBMessageSEM.cpp" />
+    <ClCompile Include="KFPBMessageSEMCommand.cpp" />
+    <ClCompile Include="KFPBMessageSEMConfig.cpp" />
+    <ClCompile Include="KFPBMessageSEMMessage.cpp" />
+    <ClCompile Include="KFPBMessageSEMOneOfMessage.cpp" />
+    <ClCompile Include="KFPBSubMessageSEMConfigPWM.cpp" />
+    <ClCompile Include="KFPBSubMessageSEMConfigSEM.cpp" />
+    <ClCompile Include="KFPBSubMessageSEMConfigSensorAnalog.cpp" />
+    <ClCompile Include="KFPBSubMessageSEMConfigSensorBool.cpp" />
+    <ClCompile Include="KFPBSubMessageSEMConfigSolenoid.cpp" />
+    <ClCompile Include="KFPBSubMessageSEMConfigStepperMotor.cpp" />
+    <ClCompile Include="KFPBSubMessageSEMConfigVirtualXYMotors.cpp" />
+    <ClCompile Include="KFPBSubMessageSEMCrc.cpp" />
+    <ClCompile Include="KFPBSubMessageSEMDeviceAddress.cpp" />
+    <ClCompile Include="KFPBSubMessageSEMLinearUnitConversion.cpp" />
+    <ClCompile Include="KFPBSubMessageSEMMessageCommandStatusReply.cpp" />
+    <ClCompile Include="KFPBSubMessageSEMMessageConfigurationStatusReply.cpp" />
+    <ClCompile Include="KFPBSubMessageSEMMessageMotor.cpp" />
+    <ClCompile Include="KFPBSubMessageSEMMessageSensor.cpp" />
+    <ClCompile Include="KFPBSubMessageSEMMessageSensorBool.cpp" />
+    <ClCompile Include="KFPBSubMessageSEMMessageSolenoid.cpp" />
+    <ClCompile Include="KFPBSubMessageSEMMessageStatus.cpp" />
+    <ClCompile Include="KFPBSubMessageSEMMessageXYMotor.cpp" />
+    <ClCompile Include="KFPBSubMessageSEMStepUnitConversion.cpp" />
+    <ClCompile Include="KFPBSubMessageSEMThresholds.cpp" />
+    <ClCompile Include="KFProtocolUtilities.cpp" />
+    <ClCompile Include="KFServerTCP.cpp" />
+    <ClCompile Include="KFServerUDP.cpp" />
+    <ClCompile Include="KFServerListenerUDP.cpp" />
+    <ClCompile Include="KFSimulator.cpp" />
+    <ClCompile Include="KFWF121Client.cpp" />
+    <ClCompile Include="KFWF121Server.cpp" />
+    <ClCompile Include="pb_common.c" />
+    <ClCompile Include="pb_decode.c" />
+    <ClCompile Include="pb_encode.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="kf.pb.h" />
+    <ClInclude Include="KFClientMain.h" />
+    <ClInclude Include="KFClientTCP.h" />
+    <ClInclude Include="KFClientUDP.h" />
+    <ClInclude Include="KFMessageHandler.h" />
+    <ClInclude Include="KFPBMessageSEM.h" />
+    <ClInclude Include="KFPBMessageSEMCommand.h" />
+    <ClInclude Include="KFPBMessageSEMConfig.h" />
+    <ClInclude Include="KFPBMessageSEMMessage.h" />
+    <ClInclude Include="KFPBMessageSEMOneOfMessage.h" />
+    <ClInclude Include="KFPBSubMessageSEMConfigPWM.h" />
+    <ClInclude Include="KFPBSubMessageSEMConfigSEM.h" />
+    <ClInclude Include="KFPBSubMessageSEMConfigSensorAnalog.h" />
+    <ClInclude Include="KFPBSubMessageSEMConfigSensorBool.h" />
+    <ClInclude Include="KFPBSubMessageSEMConfigSolenoid.h" />
+    <ClInclude Include="KFPBSubMessageSEMConfigStepperMotor.h" />
+    <ClInclude Include="KFPBSubMessageSEMConfigVirtualXYMotors.h" />
+    <ClInclude Include="KFPBSubMessageSEMCrc.h" />
+    <ClInclude Include="KFPBSubMessageSEMDeviceAddress.h" />
+    <ClInclude Include="KFPBSubMessageSEMLinearUnitConversion.h" />
+    <ClInclude Include="KFPBSubMessageSEMMessageCommandStatusReply.h" />
+    <ClInclude Include="KFPBSubMessageSEMMessageConfigurationStatusReply.h" />
+    <ClInclude Include="KFPBSubMessageSEMMessageMotor.h" />
+    <ClInclude Include="KFPBSubMessageSEMMessageSensor.h" />
+    <ClInclude Include="KFPBSubMessageSEMMessageSensorBool.h" />
+    <ClInclude Include="KFPBSubMessageSEMMessageSolenoid.h" />
+    <ClInclude Include="KFPBSubMessageSEMMessageStatus.h" />
+    <ClInclude Include="KFPBSubMessageSEMMessageXYMotor.h" />
+    <ClInclude Include="KFPBSubMessageSEMStepUnitConversion.h" />
+    <ClInclude Include="KFPBSubMessageSEMThresholds.h" />
+    <ClInclude Include="KFProtocolEnums.h" />
+    <ClInclude Include="KFProtocolUtilities.h" />
+    <ClInclude Include="KFServer.h" />
+    <ClInclude Include="KFServerTCP.h" />
+    <ClInclude Include="KFServerUDP.h" />
+    <ClInclude Include="KFServerListenerUDP.h" />
+    <ClInclude Include="KFSimulator.h" />
+    <ClInclude Include="KFWF121Client.h" />
+    <ClInclude Include="KFWF121Server.h" />
+    <ClInclude Include="pb.h" />
+    <ClInclude Include="pb_common.h" />
+    <ClInclude Include="pb_decode.h" />
+    <ClInclude Include="pb_encode.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="kf.proto" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
